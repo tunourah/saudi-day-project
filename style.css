@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+ 
+}
+.qute {
+    font-size: 2rem;
+}
+
+
+/* General styles */
+.font {
+  font-family: "Noto Nastaliq Urdu", serif;
+}
+.font-small {
+    font-size: 1px;
+    
+}
+/* Header */
+.title {
+  margin: 1em;
+  text-align: center;
+  color: #333;
+}
+
+.title h1 {
+  border-bottom: 5px double #333;
+  padding-bottom: 1em;
+}
+
+.custom-style::before,
+.custom-style::after {
+  content: " ___________ ";
+  color: #111;
+}
+
+/* Main content grid (mobile-first) */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1em;
+  padding: 1em;
+  grid-template-areas:
+    "one"
+    "two"
+   
+    "four"
+    "five"
+    "six"
+    "seven"
+    "three";
+}
+
+/* Define areas */
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+.two p {
+    font-size: 1.2rem;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+/* Image styling */
+.two img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* Responsive for larger screens */
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      "one one one one one one one one"
+      "two two two two two two two two"
+      "four five five five five five five seven"
+      "three three six six six six six seven";
+  }
+
+  .one, .two, .three, .four, .five, .six, .seven {
+    margin: 0;
+    padding: 1em;
+  }
+}
