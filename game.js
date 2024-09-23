@@ -15,37 +15,73 @@ addGame.addEventListener("click", function () {
   gameModel.classList.remove("show");
 });
 // api
-
-addWords.addEventListener("click", function () {
-  const newWord = document.getElementById("newWord").value;
-  const newHint = document.getElementById("newHint").value;
-  if (!newWord || !newHint) {
-    errorAlert.textContent = "الرجاء إدخال كلمة وتلميح";
-  }
-
-  // إرسال البيانات إلى الـ API باستخدام fetch
-  fetch("https://66f168d9415379191550c6e8.mockapi.io/newWord", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ word: newWord, hint: newHint }),
-  })
+// Initialize the wordList with predefined words
+const wordList = [
+    { word: "الوطني", hint: "يتم الاحتفال به في 23 سبتمبر" },
+    { word: "السعودية", hint: "اسم الدولة التي نحتفل بها" },
+    { word: "الاحتفال", hint: "نشاط يتم في اليوم الوطني" },
+    { word: "الطائف", hint: "مدينة سعودية تشتهر بالورود" },
+    { word: "النشيدالوطني", hint: "موسيقى وكلمات تعبر عن حب الوطن" },
+    { word: "تراث", hint: "يمثل عادات وتقاليد المملكة" },
+    { word: "الدرعية", hint: "مهد الدولة السعودية الأولى" },
+    { word: "الزيالسعودي", hint: "ملابس تعكس الثقافة السعودية" },
+    { word: "علمالمملكة", hint: "راية خضراء تتوسطها كلمة التوحيد" },
+    { word: "العلا", hint: "مدينة أثرية تعكس تاريخ المملكة" },
+  ];
+  
+  // Add event listener for adding new words
+  addWords.addEventListener("click", function () {
+    const newWord = document.getElementById("newWord").value;
+    const newHint = document.getElementById("newHint").value;
+    
+    if (!newWord || !newHint) {
+      errorAlert.textContent = "الرجاء إدخال كلمة وتلميح";
+      return; // Exit early if validation fails
+    }
+  
+    // Send data to the API using fetch
+    fetch("https://66f168d9415379191550c6e8.mockapi.io/newWord", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ word: newWord, hint: newHint }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Word added:", data);
+        
+        // Push the new word and hint to the local wordList
+        wordList.push({ word: data.word, hint: data.hint }); // Use the data returned from the API
+  
+        getRand(); // Start the game after adding the word
+        formGame.classList.remove("active");
+      })
+      .catch((error) => {
+        console.error("Error adding word:", error);
+      });
+  });
+  
+  // Fetch existing words to initialize wordList
+  fetch("https://66f168d9415379191550c6e8.mockapi.io/newWord")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Word added:", data);
+      // Initialize wordList with existing data
+      wordList.push(...data.map(item => ({ word: item.word, hint: item.hint })));
+      getRand(); // Start the game after fetching the initial words
     })
-    .catch((error) => {
-      console.error("Error adding word:", error);
-    });
-});
-fetch("https://66f168d9415379191550c6e8.mockapi.io/newWord")
-  .then((response) => response.json())
-  .then((data) => {
-    wordList = data; // يتم إضافة الأسئلة المسترجعة إلى قائمة الكلمات في اللعبة
-    getRand(); // ابدأ اللعبة بعد جلب الأسئلة
-  })
-  .catch((error) => console.error("Error fetching words:", error));
+    .catch((error) => console.error("Error fetching words:", error));
+  
+  
+  // Fetch existing words to initialize wordList
+  fetch("https://66f168d9415379191550c6e8.mockapi.io/newWord")
+    .then((response) => response.json())
+    .then((data) => {
+      // Initialize wordList with existing data
+      wordList = data.map(item => ({ word: item.word, hint: item.hint }));
+      getRand(); // Start the game after fetching the initial words
+    })
+    .catch((error) => console.error("Error fetching words:", error));
 
 let currentWord, correctLetters, wrongCount;
 const maxGuess = 6;
