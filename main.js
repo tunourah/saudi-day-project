@@ -14,7 +14,7 @@ function randomImageUrl() {
 function addDynamicImage() {
   // Create div element
   const div = document.createElement('div');
-  div.classList.add('nine', 'my-2', 'hover-2');
+  div.classList.add('nine', 'my-2', 'hover1');
 
   // Create h2 element
   const h2 = document.createElement('h2');
@@ -25,6 +25,7 @@ function addDynamicImage() {
   imgElement.src = randomImageUrl();  
   imgElement.alt = 'كاركتير اليوم الوطني';
   imgElement.style.maxWidth = '400px';
+  imgElement.style.maxHeight = '200px';
   imgElement.style.width = '100%';
   imgElement.style.height = 'auto';
   imgElement.classList.add('text-center');
@@ -39,7 +40,7 @@ function addDynamicImage() {
   // Change the image every 5 seconds
   setInterval(() => {
     imgElement.src = randomImageUrl();
-  }, 5000);
+  }, 3000);
 }
 
 // Call the function to add the image dynamically

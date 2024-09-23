@@ -134,7 +134,7 @@ body {
 
 .six {
   grid-area: six;
-  border: 2px red solid;
+ 
 }
 
 .seven {
@@ -148,6 +148,11 @@ body {
     grid-area: nine;
    
 }
+
+.hover1:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+  }
 
 /* Image styling */
 .two img {
