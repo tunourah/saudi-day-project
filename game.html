@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="gamestyle.css" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Hangman Game</title>
+  </head>
+  <body>
+    <div class="game-module">
+      <div class="content">
+        <img src="lost.gif" alt="lost" />
+        <h4>Game Over</h4>
+        <p>Correct Word : <b>Programming</b></p>
+        <button class="play-again">Play Again</button>
+      </div>
+    </div>
+    <div class="game-container">
+      <div class="hangman-box">
+        <img src="hangman-0.svg" alt="Hangman" />
+        <h1>Hangman Game</h1>
+      </div>
+      <div class="game-box">
+        <ul class="word-display"></ul>
+        <h4 class="hint-text">
+          Hint :
+          <b></b>
+        </h4>
+        <h4 class="gusse-text">
+          Incorrect Gusses :
+          <b>0/6</b>
+        </h4>
+        <div class="keyboard"></div>
+      </div>
+    </div>
+    <script src="wordlist.js"></script>
+    <script src="game.js"></script>
+   
+  </body>
+</html>

@@ -87,6 +87,35 @@ body {
   border: 2px red solid;
   
 }
+/* photo */
+.grid-img {
+    display: grid;
+    grid-template-rows: repeat(5, 2fr);
+    grid-template-columns: repeat(4, 2fr);
+    gap: 1em; /* Optional: space between images */
+    padding: 1em;
+}
+
+.grid-img img {
+    width: 100%;  /* Ensures the images take up full width */
+    height: 100%; /* Ensures the images take up full height */
+    object-fit: cover; /* Keeps the image aspect ratio intact */
+    border-radius: 3px; /* Rounds corners of the images */
+}
+
+.nine {
+    grid-row: 2 / 4;  
+    grid-column: 2 / 4;
+}
+
+.hold-img {
+    
+    margin: 0 auto;
+}
+.only-large{
+    display: none;
+}
+/*  */
 .second-four{
     display: flex;
    
@@ -132,6 +161,7 @@ body {
     margin: 0;
     padding: 1em;
   }
+ 
   .img-inline {
     height: 20%;
   }
@@ -151,5 +181,25 @@ body {
 }
 .second-four{
     display: block;
+}
+.second-four img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 3px;
+}
+.grid-img {
+    display: none;
+    
+}
+.only-large{
+    display: block;
+}
+.m-holder {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    height: 100%;
+
 }
 }
