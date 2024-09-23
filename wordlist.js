@@ -1,5 +1,12 @@
 const wordList = [
-    { word: "javascript", hint: "A programming language" },
-    { word: "python", hint: "A type of snake or a programming language" },
-    // Add more words and hints here
+  { word: "الوطني", hint: "يتم الاحتفال به في 23 سبتمبر" },
+  { word: "السعودية", hint: "اسم الدولة التي نحتفل بها" },
+  { word: "الاحتفال", hint: "نشاط يتم في اليوم الوطني" },
+  { word: "الطائف", hint: "مدينة سعودية تشتهر بالورود" },
+  { word: "النشيدالوطني", hint: "موسيقى وكلمات تعبر عن حب الوطن" },
+  { word: "تراث", hint: "يمثل عادات وتقاليد المملكة" },
+  { word: "الدرعية", hint: "مهد الدولة السعودية الأولى" },
+  { word: "الزيالسعودي", hint: "ملابس تعكس الثقافة السعودية" },
+  { word: "علمالمملكة", hint: "راية خضراء تتوسطها كلمة التوحيد" },
+  { word: "العلا", hint: "مدينة أثرية تعكس تاريخ المملكة" },
 ];

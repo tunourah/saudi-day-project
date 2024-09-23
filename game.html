@@ -1,41 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="gamestyle.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="game.css" />
-    <title>Hangman Game</title>
+    <title>لعبة تخمين الكلمة</title>
   </head>
   <body>
-    <div class="game-module">
-      <div class="content">
-        <img src="lost.gif" alt="lost" />
-        <h4>Game Over</h4>
-        <p>Correct Word : <b>Programming</b></p>
-        <button class="play-again">Play Again</button>
+    <header class="title font">
+      <p class="custom-style">اربع وتسعون عام</p>
+      <h1>اليوم الوطني السعودي</h1>
+    </header>
+    <main>
+        <div class="form-game">
+            <div class="form-content">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newWord"
+                  required
+                  placeholder="أدخل الكلمة"
+                />
+                <label for="newWord">أدخل الكلمة</label>
+              </div>
+              <p id="error"></p>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newHint"
+                  required
+                  placeholder="أدخل التلميح"
+                />
+                <label for="newHint">أدخل التلميح</label>
+              </div>
+              <p id="error"></p>
+              <button type="submit" id="add-words">إضافة</button>
+            </div>
+          </div>
+          
+
+      <!--  -->
+      <div class="game-module">
+        <div class="content">
+          <img src="lost.gif" alt="lost" />
+          <h4>اللعبة انتهت</h4>
+          <p>الكلمة الصحيحة: <b>برمجة</b></p>
+          <button class="play-again">العب مرة أخرى</button>
+          <!-- <a href="new-game"> -->
+          <button class="custom-page">أنشئ لعبتك</button>
+          <a
+            href="index.html"
+            class="btn btn-outline-danger"
+            style="display: block"
+          >
+            خروج
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="game-container">
-      <div class="hangman-box">
-        <img src="hangman-0.svg" alt="Hangman" />
-        <h1>Hangman Game</h1>
+      <div class="game-container">
+        <div class="hangman-box">
+          <img src="hangman-0.svg" alt="Hangman" />
+          <h1>لعبة خمن الكلمة</h1>
+        </div>
+        <div class="game-box">
+          <ul class="word-display"></ul>
+          <h4 class="hint-text">
+            التلميح:
+            <b></b>
+          </h4>
+          <h4 class="gusse-text">
+            محاولات خاطئة:
+            <b>0/6</b>
+          </h4>
+          <div class="keyboard"></div>
+        </div>
       </div>
-      <div class="game-box">
-        <ul class="word-display"></ul>
-        <h4 class="hint-text">
-          Hint :
-          <b></b>
-        </h4>
-        <h4 class="gusse-text">
-          Incorrect Gusses :
-          <b>0/6</b>
-        </h4>
-        <div class="keyboard"></div>
-      </div>
-    </div>
+    </main>
+
     <script src="wordlist.js"></script>
     <script src="game.js"></script>
-   
   </body>
 </html>
