@@ -44,7 +44,7 @@ body {
 
 .custom-style::before,
 .custom-style::after {
-  content: " ___________ ";
+  content: " _______ ";
   color: #111;
 }
 
@@ -62,7 +62,9 @@ body {
     "five"
     "six"
     "seven"
-    "three";
+    "three"
+    "nine";
+
 }
 
 /* Define areas */
@@ -138,6 +140,13 @@ body {
 .seven {
   grid-area: seven;
   border: 2px red solid;
+  background-image: url("https://i.pinimg.com/564x/7d/05/fc/7d05fccce84be764778a2e53d1d0938f.jpg");
+    background-size: cover;
+
+}
+.nine {
+    grid-area: nine;
+   
 }
 
 /* Image styling */
@@ -163,7 +172,7 @@ body {
         #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
       conic-gradient(at left var(--_s) bottom var(--_s),
         #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
-     
+    
     clip-path: 
       polygon(
        var(--d) 0%, 
@@ -188,6 +197,14 @@ body {
      );
   }
 
+
+  .carousel-item img {
+    height: 500px; /* Set a desired fixed height */
+    width: 100%; /* Full width */
+    object-fit: cover; /* Ensures the image fits the container without distortion */
+  }
+  
+
 /* Responsive for larger screens */
 @media (min-width: 768px) {
   .grid-container {
@@ -196,10 +213,10 @@ body {
       "one one one one one one one one"
       "two two two two two two two two"
       "four five five five five five five seven"
-      "three three six six six six six seven";
+      " three three  six six six nine nine  nine ";
   }
 
-  .one, .two, .three, .four, .five, .six, .seven {
+  .one, .two, .three, .four, .five, .six, .seven , nine {
     margin: 0;
     padding: 1em;
   }
@@ -244,4 +261,6 @@ body {
     height: 100%;
 
 }
+ 
 }
+

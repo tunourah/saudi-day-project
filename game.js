@@ -184,6 +184,13 @@ const arabicLetters = [
   "هـ",
   "و",
   "ي",
+  "ئ",
+    "ؤ",
+    "إ",
+    "ى",
+    "آ",
+    "ء",
+    
 ];
 
 arabicLetters.forEach((letter) => {
