@@ -9,6 +9,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  /* background-image: url("https://i.pinimg.com/736x/04/69/b7/0469b73086775b5491b8db605147131f.jpg"); */
+    background-size: cover;
   font-family: "Tajawal", sans-serif;
  
 }
@@ -70,12 +72,12 @@ body {
 /* Define areas */
 .one {
   grid-area: one;
-  border: 2px red solid;
+  
 }
 
 .two {
   grid-area: two;
-  border: 2px red solid;
+  
 }
 .two p {
     font-size: 1.2rem;
@@ -83,13 +85,12 @@ body {
 
 .three {
   grid-area: three;
-  border: 2px red solid;
+  
 }
 
 .four {
   grid-area: four;
-  border: 2px red solid;
-  
+   
 }
 /* photo */
 .grid-img {
@@ -140,7 +141,7 @@ body {
 .seven {
   grid-area: seven;
   border: 2px red solid;
-  background-image: url("https://i.pinimg.com/564x/7d/05/fc/7d05fccce84be764778a2e53d1d0938f.jpg");
+  /* background-image: url("https://i.pinimg.com/564x/8f/e5/b9/8fe5b995daa602cc4fa1b5cd519dd0ea.jpg"); */
     background-size: cover;
 
 }

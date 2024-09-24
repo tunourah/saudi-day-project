@@ -52,7 +52,7 @@
   }
   
   .word-display .letter.guessed { /* تصحيح هنا */
-    background-color: green;
+    background-color: rgb(169, 226, 169);
     margin: -40px 0 35px;
   }
   

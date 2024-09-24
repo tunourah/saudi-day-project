@@ -33,6 +33,7 @@ const wordList = [
   addWords.addEventListener("click", function () {
     const newWord = document.getElementById("newWord").value;
     const newHint = document.getElementById("newHint").value;
+    const successAlert = document.getElementById("successAlert");
     
     if (!newWord || !newHint) {
       errorAlert.textContent = "الرجاء إدخال كلمة وتلميح";
@@ -56,6 +57,9 @@ const wordList = [
   
         getRand(); // Start the game after adding the word
         formGame.classList.remove("active");
+         // Show success message
+      successAlert.textContent = "تمت إضافة الكلمة بنجاح!";
+      successAlert.style.color = "green"; // Style the message
       })
       .catch((error) => {
         console.error("Error adding word:", error);
