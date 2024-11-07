@@ -17,7 +17,10 @@ body {
 .qute {
     font-size: 2rem;
 }
-
+a {
+  text-decoration: none;
+  color: #333;
+}
 .font-size {
 
     font-size: 1.5rem;
@@ -69,9 +72,14 @@ body {
 
 }
 
+.text-color {
+  color : #f4f4f4;
+  
+}
 /* Define areas */
 .one {
   grid-area: one;
+
   
 }
 
@@ -266,6 +274,10 @@ body {
     gap: 1em;
     height: 100%;
 
+}
+.text-color {
+ 
+  font-size: 100px;
 }
  
 }
